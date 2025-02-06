@@ -6,6 +6,20 @@
     <title>Registration Form</title>
     <script>
         let users=[]
+        function deleteUser(index){
+            users.splice(index,1);
+            showUser()
+        }
+        function showUser()
+        {
+            let length=users.length
+            let str=""
+            for(let i=0;i<length;i++)
+            {
+                str+=`<div>${users[i].name}-${users[i].email}-${users[i].password}-${users[i].dob} <button onclick='deleteUser(${i})'>X</button></div>`
+            }
+            data.innerHTML= str
+        }
         function showData(){
             let name=document.getElementById("name").value;
             let email=document.getElementById("email").value;
@@ -18,14 +32,9 @@
                 dob:dob
             }
             users.push(user)
-            let length=users.length
-            let str=""
-            for(let i=0;i<length;i++)
-            {
-                str+=`<div>${users[i].name}-${users[i].email}-${users[i].password}-${users[i].dob}</div>`
-            }
-            data.innerHTML= str
+            showUser()
         }
+        
     </script>
 </head>
 <body>
