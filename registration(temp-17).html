@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <script>
+        let users=[]
         function showData(){
             let name=document.getElementById("name").value;
-            let mail=document.getElementById("email").value;
+            let email=document.getElementById("email").value;
             let password=document.getElementById("password").value;
             let dob=document.getElementById("dob").value;
-            data.innerHTML = `${name}, ${mail}, ${password}, ${dob}`;
+            let user={
+                name:name,
+                email:email,
+                password:password,
+                dob:dob
+            }
+            users.push(user)
+            let length=users.length
+            let str=""
+            for(let i=0;i<length;i++)
+            {
+                str+=`<div>${users[i].name}-${users[i].email}-${users[i].password}-${users[i].dob}</div>`
+            }
+            data.innerHTML= str
         }
     </script>
 </head>
