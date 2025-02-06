@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            justify-content: center;         
+
+        }
+        .box{
+            border-radius: 5px;
+            background-color: aquamarine;
+            margin: 20px;
+            border: 2px solid gray;
+            padding: 20px;
+            
+        }
+        .color
+        {
+            background-color: teal;
+            align: center;
+        }
+        #image{
+            border-radius: 5px;
+            padding: 20px;
+        }
+        #button{
+            
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="root"></div>
+    <script>
+        let products=[
+            {id:1,name:"Product 1",price:"Rs.35", des:"This is the description of the product", url:"https://picsum.photos/id/1/200/200"},
+            {id:2,name:"Product 2",price:"Rs.50", des:"This is the description of the product", url:"https://picsum.photos/id/2/200/200"},
+            {id:3,name:"Product 3",price:"Rs.45", des:"This is the description of the product", url:"https://picsum.photos/id/3/200/200"},
+        ]
+        let str="<div class=container>"
+        for(let i=0;i<products.length;i++)
+        {
+            str +=`<div class='box'>
+                <img src='${products[i].url}' id="image">
+                <div class="color">
+                <h2>${products[i].name}</h2>
+                <p>${products[i].des}</p>
+                <p>${products[i].price}</p>
+                <button id="button">Add to cart</button>
+                </div>
+                </div>` 
+        }
+        str+='</div>'
+        root.innerHTML =str
+    </script>
 </body>
 </html>
