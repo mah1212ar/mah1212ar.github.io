@@ -1,0 +1,29 @@
+.row{
+    display:flex;
+}
+.box{
+    background-color: white;
+    margin: 10px;
+}
+.container {
+    margin: 0;
+}
+.header {
+    background-color:pink;
+    display: flex;
+    justify-content: space-between;
+}
+.productBlock{
+    background-color: silver;
+    display:flex;
+}
+.cartBlock {
+    background-color: silver;
+    width: 300px;
+    position: fixed;
+    top:0px;
+    left:100%;
+    height: 100%;
+    padding: 20px;
+    transition: 2s;
+}
