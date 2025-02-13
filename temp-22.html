@@ -7,11 +7,13 @@
     <title>Document</title>
   </head>
   <body>
+    <h1><div id="root">
+    </div></h1>
     <script>
-      // const products = ["apple", "orange", "mango"];
-      // products.forEach((value,index,arr) => {
-      //   console.log(value);
-      // });
+      const products = ["apple", "orange", "mango"];
+      products.forEach((value,index,arr) => {
+        console.log(value);
+      });
 
       // const num = [12,23,45,10]
       // const newArr = num.map(value => {
@@ -27,10 +29,14 @@
       // const newArr = num.filter((value) => value > 10);
       // console.log(newArr);
 
-      const num = ['st01','st02','st09','st05'];
-      const newArr = num.find((value) => value == 'st02');
-      console.log(newArr);
-      
+      // const num = ['st01','st02','st09','st05'];
+      // const newArr = num.find((value) => value == 'st02');
+      // console.log(newArr);
+
+      const score= [12, 23, 45, 10];
+      const total = score.reduce((sum, value) => sum+value );
+      root.innerHTML=total;
+
       
     </script>
   </body>
