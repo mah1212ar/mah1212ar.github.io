@@ -1,8 +1,6 @@
 let users = [];
 let user = {};
-// let useremail = "";
-// let username = "";
-// let currBalance = 0;
+
 document.write("<div id=root></div>");
 function toggle(color) {
   if (color == "dark") {
