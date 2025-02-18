@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let doj=new Date()
+    //     document.write(doj)
+    //     document.write("<br>"+ doj.getDate()+", ")
+    //     document.write(doj.getFullYear())
+    //     document.write("<br>"+doj.getDay())
+    Submit=()=>{
+        let doj =new Date(document.getElementById("doj").value)
+        if(doj.getDay()==3)
+        root.innerHTML="Sorry we are closed on Wednesdays"
+        else
+        root.innerHTML="Welcome! "
+    }
+    
+    </script>
+    <input type="date" id="doj">
+    <button id="submit" onclick=Submit()>Submit</button>
+    <div id="root"></div>
+</body>
+</html>
