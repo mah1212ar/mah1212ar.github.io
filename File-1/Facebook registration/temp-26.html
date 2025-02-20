@@ -11,9 +11,10 @@
       .container {
         background-color: white;
         border-radius: 20px;
-        padding: 10px;
+        padding: 20px;
         width: 400px;
         margin: auto;
+        
       }
       .row {
         display: flex;
@@ -28,6 +29,8 @@
         color: blue;
         font-weight: bold;
         font-family: verdana;
+        text-align: center;
+        
       }
       .caption {
         font-size: 20px;
@@ -78,9 +81,10 @@
     </style>
   </head>
   <body>
+    <div class="header">facebook</div>
     <div class="container">
       <div class="row">
-        <div class="header">facebook</div>
+       
       </div>
       <div class="row">
         <div>
@@ -93,18 +97,18 @@
     </div>
     <script>
       const months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
+        "January",
+        "February",
+        "March",
+        "April",
         "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
       ];
       const showData = () => {
         let firstname = document.getElementById("firstname").value;
@@ -129,7 +133,7 @@
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
           <button>Confirm</button>
-          <button>Edit</button>
+          <button onclick="showForm()">Edit</button>
         </div>
         `;
         root.innerHTML = str;
@@ -139,7 +143,7 @@
         let str = `
       
       <div class="row">
-        <input type="text" id="firstname" placeholder="Firstname" />
+        <input type="text" id="firstname" placeholder="Firstname" /> 
         <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
