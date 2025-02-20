@@ -11,10 +11,9 @@
       .container {
         background-color: white;
         border-radius: 20px;
-        padding: 20px;
+        padding: 10px;
         width: 400px;
         margin: auto;
-        
       }
       .row {
         display: flex;
@@ -29,8 +28,6 @@
         color: blue;
         font-weight: bold;
         font-family: verdana;
-        text-align: center;
-        
       }
       .caption {
         font-size: 20px;
@@ -81,10 +78,9 @@
     </style>
   </head>
   <body>
-    <div class="header">facebook</div>
     <div class="container">
       <div class="row">
-       
+        <div class="header">facebook</div>
       </div>
       <div class="row">
         <div>
@@ -97,18 +93,18 @@
     </div>
     <script>
       const months = [
-        "January",
-        "February",
-        "March",
-        "April",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
         "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
       const showData = () => {
         let firstname = document.getElementById("firstname").value;
@@ -133,17 +129,39 @@
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
           <button>Confirm</button>
-          <button onclick="showForm()">Edit</button>
+          <button onclick=showForm()>Edit</button>
         </div>
         `;
         root.innerHTML = str;
+      };
+
+      const f1 = () => {
+        let str = "";
+        let dt = new Date();
+        let d = dt.getDate();
+        let m = dt.getMonth();
+        let y = dt.getFullYear();
+        for (let i = 1; i <= 31; i++) {
+          str += `<option ${i === d && "selected"}>${i}</option>`;
+        }
+        day.innerHTML = str;
+        str = "";
+        for (let i = 0; i <= 11; i++) {
+          str += `<option ${i === m && "selected"}>${months[i]}</option>`;
+        }
+        month.innerHTML = str;
+        str = "";
+        for (let i = 1905; i <= 2025; i++) {
+          str += `<option ${i === y && "selected"}>${i}</option>`;
+        }
+        year.innerHTML = str;
       };
 
       const showForm = () => {
         let str = `
       
       <div class="row">
-        <input type="text" id="firstname" placeholder="Firstname" /> 
+        <input type="text" id="firstname" placeholder="Firstname" />
         <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
@@ -198,30 +216,12 @@
       <div class="row">
         <button onclick='showData()'>Sign Up</button>
       </div>
-      `;
+      `; 
         root.innerHTML = str;
+        f1(); 
       };
 
       showForm();
-      let str = "";
-      let dt = new Date()
-      let d = dt.getDate()
-      let m = dt.getMonth()
-      let y = dt.getFullYear()
-      for (let i = 1; i <= 31; i++) {
-        str += `<option ${i === d && "selected"}>${i}</option>`;
-      }
-      day.innerHTML = str;
-      str = "";
-      for (let i = 0; i <= 11; i++) {
-        str += `<option ${i === m && "selected"}>${months[i]}</option>`;
-      }
-      month.innerHTML = str;
-      str = "";
-      for (let i = 1905; i <= 2025; i++) {
-        str += `<option ${i === y && "selected"}>${i}</option>`;
-      }
-      year.innerHTML = str;
 
       const togglePronoun = () => {
         let p = document.getElementsByName("gender");
